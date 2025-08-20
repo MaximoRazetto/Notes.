@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Notas con Modal</title>
   <style>
-    /* Reset básico */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       background-color: #000;
@@ -59,7 +58,6 @@
     .card a:hover {
       color: #ddd;
     }
-    /* Modal */
     .modal-overlay {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
@@ -137,22 +135,6 @@
       <p>Tu cerebro está en tu contra. No porque te odie, sino porque está diseñado para mantenerte vivo, no para que tengas éxito. El éxito requiere trabajo duro, repetición, constancia, esfuerzo agotador. ¿Y el cerebro? Quiere consuelo. Quiere que evites lo que es difícil. Quiere que te distraigas, pospongas las cosas, tomes atajos. Tu cerebro es un cobarde programado para evitar el dolor y el éxito duele. Piénsalo. ¿Cuántas veces has comenzado algo con de energía y, después de unos días, simplemente te has detenido? ¿Cuántas veces has prometido que cambiarías tu vida, que te esforzarías, que transformarías tu rutina y dos semanas después estabas en el mismo lugar? No es falta de habilidad. No es mala suerte. Es tu cerebro saboteándote, convenciéndote de que la forma más fácil es la mejor. El problema es que el éxito no es fácil. Nunca llegó. Nunca vendrá. El éxito es, aburrido, monótono. Está haciendo lo mismo una y otra vez hasta que te vuelves tan absurdamente bueno que nadie puede ignorarte. ¿Te aburre? Excelente. Porque ahí es exactamente donde el 99% de la gente fracasa. Quieren noticias, quieren emociones, quieren cambios todo el tiempo. Empiezan un proyecto, se emocionan un rato, luego se aburren y buscan otra cosa. Y pasan toda su vida así, saltando de una cosa a otra, sin construir nada sólido. Ahí miran a los que lo lograron y dicen que tuvo suerte. No fue suerte. Fue constancia. ¿Alguna vez te has detenido a pensar en lo que realmente significa ser bueno en algo? No es solo talento, no es solo creatividad, no es solo pasión. Es la suma de miles de pequeñas repeticiones. Es cometer errores, ajustar, cometer errores nuevamente, ajustar nuevamente. Es construir algo que no te da placer inmediato, pero a la larga te coloca por encima de los demás. Piensa en alguien a quien admiras. Cualquiera. Ahora me dice: ¿llegó a donde llegó porque fue genial desde el principio, o porque pasó una cantidad absurda de tiempo mejorando mientras otros se rindieron? La verdad es que nadie te enseña a persistir. Todo el mundo habla de motivación, propósito, inspiración. Pero nadie te dice la parte real: vas a tener que hacer muchas cosas aburridas, aburridas. Tendrás que trabajar cuando estés cansado, estudiar cuando estés, continuar cuando todo dentro de ti diga detente. Porque así es como funciona. No tienes que ser el más talentoso. No tienes que ser el más inteligente. Solo necesitas seguir adelante. La mayoría de la gente se detiene en el primer obstáculo. Piensa que el fracaso es una señal para seguir adelante. No lo es. El fracaso es una señal para seguir adelante y continuar. Cualquiera que entienda esto se vuelve imparable. Ahora, si has leído esto esperando una solución fácil, un truco, una técnica mágica para hackear tu cerebro y motivarte todo el tiempo, créeme. Eso no existe. Lo que existe es hacer lo que hay que hacer, independientemente de cómo te sientas. Eso es persistencia. Y la persistencia es lo que separa a los que la obtienen de los que se quedan en el camino.</p>
       <a class="read-more" href="#">...Leer más</a>
     </div>
-	<!-- Nota 4 (nueva) -->
-<div class="card">
-  <h2>La ilusión del control</h2>
-  <p>Crees que tienes el control de tu vida, pero la mayoría de las veces reaccionas a lo que ocurre...</p>
-  <a class="read-more" href="#">...Leer más</a>
-</div>
-
-<!-- Nota 5 (nueva) -->
-<div class="card">
-  <h2>El valor del silencio</h2>
-  <p>El silencio no es vacío, es espacio para pensar, reflexionar y escuchar lo que ignoras...</p>
-  <a class="read-more" href="#">...Leer más</a>
-</div>
-  </div>
-
-  <!-- Modal -->
   <div class="modal-overlay" id="modal">
     <div class="modal">
       <button class="modal-close" id="modal-close" aria-label="Cerrar modal">&times;</button>
@@ -162,13 +144,11 @@
   </div>
 
   <script>
-    // Referencias
     const modal = document.getElementById('modal');
     const modalTitle = document.getElementById('modal-title');
     const modalContent = document.getElementById('modal-content');
     const modalCloseBtn = document.getElementById('modal-close');
 
-    // Función para abrir modal con contenido
     function openModal(title, content) {
       modalTitle.textContent = title;
       modalContent.textContent = content;
@@ -176,13 +156,11 @@
       document.body.style.overflow = 'hidden'; // Evitar scroll detrás del modal
     }
 
-    // Función para cerrar modal
     function closeModal() {
       modal.classList.remove('active');
       document.body.style.overflow = 'auto';
     }
 
-    // Agregar evento a cada "Leer más"
     document.querySelectorAll('.read-more').forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
@@ -193,15 +171,12 @@
       });
     });
 
-    // Cerrar modal al hacer click en el botón
     modalCloseBtn.addEventListener('click', closeModal);
 
-    // Cerrar modal al hacer click fuera del contenido
     modal.addEventListener('click', e => {
       if (e.target === modal) closeModal();
     });
 
-    // Cerrar modal con tecla Escape
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && modal.classList.contains('active')) {
         closeModal();
@@ -210,3 +185,4 @@
   </script>
 </body>
 </html>
+
